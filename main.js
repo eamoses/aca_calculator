@@ -7,16 +7,21 @@ let operation = null
 // this function takes in the number you type in the input field and saves it to the "firstNum" variable
 const saveFirstNumber = (num) => {
   firstNum = parseInt(num)
+  console.log(`1. ${typeof(num)} ${num}`)
+  console.log(`2. ${typeof(firstNum)} ${firstNum}`)
 }
 
 // this function takes in the number you type in the 2nd input field and saves it to the "secondNum" variable
 const saveSecondNumber = (num) => {
   // "parseInt" is a built in function in JS that converts a string/word into a number
   secondNum = parseInt(num)
+  console.log(`3. ${typeof(num)} ${num}`)
+  console.log(`4. ${typeof(secondNum)} ${secondNum}`)
 }
 
 // this function takes in two argument/numbers and returns the sum of them
 const add = (numA, numB) => {
+  console.log(`${numA} ${numB}`)
   const sum = numA + numB
   return sum
 }
@@ -57,7 +62,7 @@ const modulus = (numA, numB) => {
 const changeOperation = (chosenOperation) => {
   operation = chosenOperation
   // Use your Chrome Inspector Tool > Console Tab to see the "operation" that's logged
-  console.log(operation)
+  console.log(`5. ${operation}`)
 }
 
 // In order to show the user their results we have to access the DOM and stick in the value
@@ -82,6 +87,6 @@ const equals = () => {
     break;
     case "modulus": putResultInElement(modulus(firstNum, secondNum))
     break;
-    default: "Choose an operation"
+    default: document.getElementById("result").innerHTML = `Choose an operation`
   }
 }
